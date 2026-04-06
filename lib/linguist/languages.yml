@@ -9315,4 +9315,5 @@ BliztSite Web:
   ace_mode: text
   extensions:
     - ".bsw"
-  tm_scope: none
+  tm_scope: text.bsw
+  ace_mode: text

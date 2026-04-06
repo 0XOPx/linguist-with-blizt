@@ -1,0 +1,104 @@
+{
+  "name": "BliztSite Web",
+  "scopeName": "text.bsw",
+  "fileTypes": ["bsw"],
+  "patterns": [
+    { "include": "#metadata" },
+    { "include": "#blocks" },
+    { "include": "#inline" }
+  ],
+  "repository": {
+    "metadata": {
+      "patterns": [
+        {
+          "match": "^(@[A-Za-z][A-Za-z0-9_-]*)(\\s+)(.*)$",
+          "captures": {
+            "1": { "name": "keyword.control.metadata.bliztsite" },
+            "3": { "name": "string.unquoted.metadata.bliztsite" }
+          }
+        }
+      ]
+    },
+    "blocks": {
+      "patterns": [
+        {
+          "match": "^(h[1-6]:)(\\s*)(.*)$",
+          "captures": {
+            "1": { "name": "entity.name.tag.heading.bliztsite" },
+            "3": { "name": "markup.heading.bliztsite" }
+          }
+        },
+        {
+          "match": "^(p:)(\\s*)(.*)$",
+          "captures": {
+            "1": { "name": "entity.name.tag.paragraph.bliztsite" },
+            "3": { "name": "markup.paragraph.bliztsite" }
+          }
+        },
+        {
+          "match": "^(li:)(\\s*)(.*)$",
+          "captures": {
+            "1": { "name": "keyword.other.list.bliztsite" },
+            "3": { "name": "markup.list.unnumbered.bliztsite" }
+          }
+        },
+        {
+          "match": "^(quote:)(\\s*)(.*)$",
+          "captures": {
+            "1": { "name": "keyword.other.quote.bliztsite" },
+            "3": { "name": "markup.quote.bliztsite" }
+          }
+        },
+        {
+          "begin": "^(code:)$",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.code-block.bliztsite" }
+          },
+          "end": "^(end)$",
+          "endCaptures": {
+            "1": { "name": "keyword.control.block-end.bliztsite" }
+          },
+          "name": "markup.raw.code.bliztsite"
+        },
+        {
+          "begin": "^(html:)$",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.html-block.bliztsite" }
+          },
+          "end": "^(end)$",
+          "endCaptures": {
+            "1": { "name": "keyword.control.block-end.bliztsite" }
+          },
+          "name": "text.html.embedded.bliztsite",
+          "patterns": [
+            { "include": "text.html.basic" }
+          ]
+        }
+      ]
+    },
+    "inline": {
+      "patterns": [
+        {
+          "match": "\\[strong:([^\\]]+)\\]",
+          "name": "markup.bold.bliztsite"
+        },
+        {
+          "match": "\\[em:([^\\]]+)\\]",
+          "name": "markup.italic.bliztsite"
+        },
+        {
+          "match": "\\[code:([^\\]]+)\\]",
+          "name": "markup.inline.raw.string.bliztsite"
+        },
+        {
+          "match": "\\[link:([^|\\]]+)\\|([^\\]]+)\\]",
+          "name": "markup.underline.link.bliztsite"
+        },
+        {
+          "match": "\\[br\\]",
+          "name": "constant.character.line-break.bliztsite"
+        }
+      ]
+    }
+  }
+}

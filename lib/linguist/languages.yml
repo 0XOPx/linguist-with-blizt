@@ -9309,3 +9309,10 @@ xBase:
   tm_scope: source.harbour
   ace_mode: text
   language_id: 421
+BliztSite Web:
+  type: markup
+  color: "#2D7FF9"
+  ace_mode: text
+  extensions:
+    - ".bsw"
+  tm_scope: none

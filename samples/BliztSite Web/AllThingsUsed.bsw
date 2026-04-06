@@ -1,0 +1,41 @@
+@title BliztSite Web Syntax Sample
+@description A full sample covering the current BliztSite Web language features.
+
+h1: BliztSite Web
+p: This sample shows [strong:headings], [em:inline emphasis], [code:inline code], and a [link:link to About|/about.html].
+
+h2: Paragraphs and line breaks
+p: You can write plain paragraph lines and insert a manual break here.[br]This text appears on the next line.
+
+h3: Lists
+li: First item
+li: Second item with [strong:bold text]
+li: Third item with [em:italic text]
+li: Fourth item with [code:npx blizt build]
+li: Fifth item with a [link:homepage|/]
+
+h4: Quotes
+quote: Keep the syntax tiny, readable, and easy to turn into HTML.
+
+h5: Fallback plain text
+This line has no prefix, so Blizt treats it as a normal paragraph.
+
+h6: Code block
+code:
+const site = "Blizt";
+const extension = ".bsw";
+
+function build() {
+  console.log(`Building ${site} pages from ${extension} files`);
+}
+end
+
+h2: Raw HTML block
+html:
+<section class="feature-card">
+  <h3>Embedded HTML</h3>
+  <p>This block is passed through directly.</p>
+</section>
+end
+
+p: End of sample.
